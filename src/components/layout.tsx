@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 import Navigation, { NavigationItem } from "./navigation";
 import Link from "next/link";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -63,7 +65,7 @@ export default function RootLayout({
               </h1>
               {navigateBackRoute &&
                 <Link href={navigateBackRoute.path} className='rounded-full border border-solid transition-colors flex items-center justify-center border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent md:w-[200px]'>
-                  Back to {navigateBackRoute.label}</Link>}
+                  <FontAwesomeIcon icon={["fas", "arrow-left"]} />Back to {navigateBackRoute.label}</Link>}
             </div>}
       </div>
       <div className="content font-[family-name:var(--font-geist-sans)]">
