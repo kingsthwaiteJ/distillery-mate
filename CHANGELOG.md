@@ -4,9 +4,13 @@ All changes to this project will be documented here.
 
 ## [Unreleased]
 
-- Database integration.
 - UI theme.
 - Page content.
+
+## [Version 0.1.3] - 27/03/2025
+
+- Added database integration.
+- Created database initialization scripts.
 
 ## [Version 0.1.2] - 27/03/2025
 
