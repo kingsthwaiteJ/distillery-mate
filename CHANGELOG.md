@@ -4,8 +4,14 @@ All changes to this project will be documented here.
 
 ## [Unreleased]
 
-- UI theme.
-- Page content.
+- Viewing database content in UI.
+- Creating database content from UI.
+- Landing page.
+
+## [Version 0.1.5] - 27/03/2025
+
+- Added @mui/material packages.
+- Created UI theme.
 
 ## [Version 0.1.4] - 27/03/2025
 
