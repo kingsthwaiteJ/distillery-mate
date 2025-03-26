@@ -7,6 +7,10 @@ All changes to this project will be documented here.
 - UI theme.
 - Page content.
 
+## [Version 0.1.4] - 27/03/2025
+
+- Fixed syntax errors that were highlighted via eslint.
+
 ## [Version 0.1.3] - 27/03/2025
 
 - Added database integration.

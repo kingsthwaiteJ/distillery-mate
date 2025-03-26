@@ -1,7 +1,8 @@
 export type Consumable = {
-    name: string;
-    brand: string;
-    price: string;
-    type: 'ingredient' | 'part';
-    quantity: number;
-}
+  id: number;
+  name: string;
+  brand: string;
+  price: string;
+  type: "ingredient" | "part";
+  quantity: number;
+};

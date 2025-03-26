@@ -1,5 +1,6 @@
 export type JournalEntry = {
-    name: string;
-    date: Date;
-    content: string;
-}
+  id: number;
+  name: string;
+  date: Date;
+  content: string;
+};

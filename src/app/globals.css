@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@import './font.css';
-@import './navigation.css';
-@import './header.css';
-@import './content.css';
+@import "./font.css";
+@import "./navigation.css";
+@import "./header.css";
+@import "./content.css";
 
 :root {
   --background: #ffffff;
