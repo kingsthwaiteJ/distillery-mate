@@ -1,26 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./../app/globals.css";
 import { useRouter } from "next/router";
 import Navigation, { NavigationItem } from "./navigation";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const metadata: Metadata = {
-  title: "Distillery Mate",
-  description: "Distilling journaling and inventory management tool.",
-};
 
 export default function RootLayout({
   children,
