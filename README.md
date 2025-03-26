@@ -26,11 +26,11 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
+      <a href="#try-it-yourself">Try it Yourself</a>
     </li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
@@ -40,6 +40,11 @@ As an amateur home-distiller, I often find that it's hard to keep regular and co
 With that in mind, I've created this tool to consolidate all of that information into a single place. Additionally, I've been wanting to try using React for a long time, and haven't got round to giving it a go until now, and this feels like a great opportunity to do that.
 
 My hope is that this tool will become my go-to for anything distilling-related, and that it might even help other distillers out there as well.
+
+<!-- TRY IT YOURSELF -->
+## Try it Yourself
+
+Check out the GitHub-hosted instance of this tool [here](https://kingsthwaitej.github.io/distillery-mate).
 
 <br/>
 <div align="center">
