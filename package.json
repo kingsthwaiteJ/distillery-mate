@@ -1,11 +1,12 @@
 {
   "name": "distillery-mate",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -28,9 +29,21 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'Pre-commit hook running' && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,css}": "eslint --fix"
   }
 }

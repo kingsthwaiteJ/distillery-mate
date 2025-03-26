@@ -8,6 +8,11 @@ All changes to this project will be documented here.
 - Creating database content from UI.
 - Landing page.
 
+## [Version 0.1.6] - 27/03/2025
+
+- Added new eslint packages.
+- Setup pre-commit hook for linting.
+
 ## [Version 0.1.5] - 27/03/2025
 
 - Added @mui/material packages.
