@@ -15,24 +15,43 @@ export const db = new sqlite3.Database(
 
 export const apiGet = async (query: string) => {
   return await new Promise((resolve, reject) => {
-    db.all(query, (err: Error, row: any) => {
-      if (err) {
-        console.log(err);
-        return reject(err);
+    db.all(
+      `
+      BEGIN TRANSACTION;
+      
+      ${query}
+      
+      COMMIT TRANSACTION;
+      `,
+      (err: Error, row: any) => {
+        if (err) {
+          console.log(err);
+          return reject(err);
+        }
+        return resolve(row);
       }
-      return resolve(row);
-    });
+    );
   });
 };
 
 export const apiPost = async (query: string, values: string[]) => {
   return await new Promise((resolve, reject) => {
-    db.run(query, values, function (err: Error) {
-      if (err) {
-        console.log(err);
-        reject(err);
+    db.run(
+      `
+      BEGIN TRANSACTION;
+      
+      ${query}
+      
+      COMMIT TRANSACTION;
+      `,
+      values,
+      function (err: Error) {
+        if (err) {
+          console.log(err);
+          reject(err);
+        }
+        resolve(null);
       }
-      resolve(null);
-    });
+    );
   });
 };
