@@ -35,7 +35,7 @@ export const apiPost = async (
         console.log(err);
         reject(err);
       }
-      resolve(null);
+      resolve(this.lastID);
     });
   });
 };

@@ -27,9 +27,12 @@ export async function postRequest(
 ) {
   let status, respBody;
   try {
-    await apiPost(sql, values);
+    const newId = await apiPost(sql, values);
     status = 200;
-    respBody = { message: "Successfully created consumable" };
+    respBody = {
+      message: "Successfully created consumable",
+      data: { id: newId },
+    };
     return Response.json(respBody, {
       status,
     });
