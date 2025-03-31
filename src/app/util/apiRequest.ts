@@ -23,7 +23,7 @@ export async function postRequest(
   req: Request,
   res: Response,
   sql: string,
-  values: any[]
+  values: { [key: string]: string | number }
 ) {
   let status, respBody;
   try {

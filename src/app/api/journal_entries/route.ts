@@ -1,9 +1,7 @@
 import { getRequest, postRequest } from "../../util/apiRequest";
 
 export async function GET(req: Request, res: Response) {
-  const query = `
-       SELECT * from JournalEntries
-     `;
+  const query = `SELECT * FROM [JournalEntries];`;
 
   return await getRequest(req, res, query);
 }
@@ -13,10 +11,12 @@ export async function POST(req: Request, res: Response) {
   const { author, content } = body;
 
   const query = `
-    INSERT INTO JournalEntries(author, date, content)
-    VALUES(?, GETDATETIME(), ?)
+    INSERT INTO [JournalEntries] (author, date, content)
+    VALUES ($author, GETDATETIME(), $content)
   `;
-  const values = [author, content];
 
-  return await postRequest(req, res, query, values);
+  return await postRequest(req, res, query, {
+    $author: author,
+    $content: content,
+  });
 }
