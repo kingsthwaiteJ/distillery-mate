@@ -17,7 +17,21 @@ export default function RootLayout({
   const navItems: NavigationItem[] = [
     { path: "/", label: "Home" },
     { path: "/inventory", label: "Inventory" },
-    { path: "/inventory/consumables", label: "Consumables", parent: "Inventory" },
+    {
+      path: "/inventory/consumables",
+      label: "Consumables",
+      parent: "Inventory",
+    },
+    {
+      path: "/inventory/consumables/new",
+      label: "Create Consumable",
+      parent: "Consumables",
+    },
+    {
+      path: "/inventory/consumables/[slug]",
+      label: "Consumable",
+      parent: "Consumables",
+    },
     { path: "/inventory/equipment", label: "Equipment", parent: "Inventory" },
     { path: "/journal-entries", label: "Journal Entries" },
     { path: "/journal-entries/[slug]", label: "Journal Entry", parent: "Journal Entry" },
