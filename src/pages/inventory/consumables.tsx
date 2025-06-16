@@ -71,13 +71,9 @@ const Page: NextPageWithLayout = ({ items }) => {
     </div>
   );
 };
- 
+
 Page.getLayout = function getLayout(page: ReactElement) {
-  return (
-    <Layout name="Consumables">
-      {page}
-    </Layout>
-  )
-}
- 
+  return <Layout name="Consumables">{page}</Layout>;
+};
+
 export default Page;

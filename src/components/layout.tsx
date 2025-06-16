@@ -4,16 +4,16 @@ import Navigation, { NavigationItem } from "./navigation";
 import Link from "next/link";
 import { darkTheme } from "@/app/theme";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ThemeProvider } from "@mui/material";
 
 export default function RootLayout({
   children,
-  name
+  name,
 }: Readonly<{
   children: React.ReactNode;
   name?: string;
-}>) {  
+}>) {
   const navItems: NavigationItem[] = [
     { path: "/", label: "Home" },
     { path: "/inventory", label: "Inventory" },
@@ -33,8 +33,17 @@ export default function RootLayout({
       parent: "Consumables",
     },
     { path: "/inventory/equipment", label: "Equipment", parent: "Inventory" },
+    {
+      path: "/inventory/equipment/[slug]",
+      label: "Equipment",
+      parent: "Equipment",
+    },
     { path: "/journal-entries", label: "Journal Entries" },
-    { path: "/journal-entries/[slug]", label: "Journal Entry", parent: "Journal Entry" },
+    {
+      path: "/journal-entries/[slug]",
+      label: "Journal Entry",
+      parent: "Journal Entry",
+    },
     { path: "/recipes", label: "Recipes" },
     { path: "/recipes/[slug]", label: "Recipe", parent: "Recipes" },
   ];
@@ -55,18 +64,21 @@ export default function RootLayout({
     <ThemeProvider theme={darkTheme}>
       <div>
         <div className="header font-[family-name:var(--font-geist-sans)]">
-          <h2>
-            Distillery Mate
-          </h2>
-          {name && 
-              <div>
-                <h1>
-                  {name}
-                </h1>
-                {navigateBackRoute &&
-                  <Link href={navigateBackRoute.path} className='rounded-full border border-solid transition-colors flex items-center justify-center border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent md:w-[200px]'>
-                    <FontAwesomeIcon icon={["fas", "arrow-left"]} />Back to {navigateBackRoute.label}</Link>}
-              </div>}
+          <h3>Distillery Mate</h3>
+          {name && (
+            <div>
+              <h1>{name}</h1>
+              {navigateBackRoute && (
+                <Link
+                  href={navigateBackRoute.path}
+                  className="rounded-full border border-solid transition-colors flex items-center justify-center border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent md:w-[200px]"
+                >
+                  <FontAwesomeIcon icon={["fas", "arrow-left"]} />
+                  Back to {navigateBackRoute.label}
+                </Link>
+              )}
+            </div>
+          )}
         </div>
         <div className="content font-[family-name:var(--font-geist-sans)]">
           {children}
